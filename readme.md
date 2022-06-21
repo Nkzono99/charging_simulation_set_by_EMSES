@@ -171,7 +171,7 @@ myqsubコマンドは、シミュレーションフォルダー内のplasma.inp�
     jupyter lab上でh5pyやmatplotlib等を用いて可視化
     \$ jupyter lab --port <port-number>
   
-  (+ 自作ライブラリemoutを用いて可視化)
+  + (ライブラリemoutを用いて可視化)
     emoutというライブラリをインストールすればpython上での簡単な可視化が可能
     
     * インストール
