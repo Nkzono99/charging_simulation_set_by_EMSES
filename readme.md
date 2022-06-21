@@ -160,8 +160,8 @@ myqsubコマンドは、シミュレーションフォルダー内のplasma.inp�
     
 ### 解析
 - paraviewを用いる場合
-.h5と.xdmfをダウンロードし、paraviewにロードする
-(私はやり方を知らないが、ダウンロードをせずに解析することもできるらしい？)
+    + .h5と.xdmfをダウンロードし、paraviewにロードする
+      (私はやり方を知らないが、ダウンロードをせずに解析することもできるらしい？)
 
 - pythonを用いる場合
   + ローカルで可視化する
@@ -191,7 +191,11 @@ myqsubコマンドは、シミュレーションフォルダー内のplasma.inp�
     ```
 
 
-
+### 発展
+    - 太陽風パラメータを変更(wp, vdri, p[ae]th, vdthz, vdthxy等)
+    - 光電子パラメータを変更(wp(3), p[ae]th(3), curf(3)等)
+    - 空洞形状パラメータを変更([xyz]lrechole, [xyz]urechole, [xyz]mine, [xyz]maxe等)
+    - EMSESソースコードとPICアルゴリズムの対応を確認(esses.F90等)
 
 ## 便利ツール集
 ### Camphor上でのコマンドツール: camptools ( https://github.com/Nkzono99/camptools )
