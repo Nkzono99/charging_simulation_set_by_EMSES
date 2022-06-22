@@ -112,7 +112,7 @@ EMSES本体のソースコード
 (実際の仕様の際はjobファイルを作成しスパコンの実行キューに投入する)
 
 ```
-$ <MPI_EXEC> ./mpiemses3d plasma.inp
+$ <MPI_EXEC> ./mpiemses3D plasma.inp
 ※ <MPI_EXEC>: MPI実行コマンド (camphor上では"aprun -n <NUMBER_OF_PROCESS>")
 ```
 ### Anaconda(python環境)のcamphorへのロード
@@ -136,7 +136,7 @@ $ make
 - ビルドしたEMSESをシミュレーションフォルダーにコピー
 
 ```
-$ cp mpiemses3d_ohhelp20/mpiemses3d <simulation-folder>/
+$ cp mpiemses3d_ohhelp20/mpiemses3D <simulation-folder>/
 ```
 
 - 各シミュレーションフォルダ内のjobスクリプトの権限変更(必要ない可能性あり)
