@@ -125,7 +125,7 @@ module load anaconda3/2019.10
 EMSESのビルド及び各シミュレーションを実行しその結果の可視化を行う.
 
 ### 準備
-- EMSESのビルド
+#### EMSESのビルド
 
 ```
 $ cd mpiemses3d_ohhelp20
@@ -133,21 +133,26 @@ $ make clean
 $ make
 ```
 
-- ビルドしたEMSESをシミュレーションフォルダーにコピー
+#### ビルドしたEMSESをシミュレーションフォルダーにコピー
 
 ```
 $ cp mpiemses3d_ohhelp20/mpiemses3D <simulation-folder>/
 ```
 
-- 各シミュレーションフォルダ内のjobスクリプトの権限変更(必要ない可能性あり)
+#### 各シミュレーションフォルダ内のjobスクリプトの権限変更(必要ない可能性あり)
 
 ```
 $ chmod 755 <simulation-folder>/job.sh
 ```
 
-- 各シミュレーションフォルダ内のjobスクリプトの変更(下記ツールを用いる場合必要なし)
-\$ vim <simulation-folder>/job.sh
-この後,使用するコア数等を適宜変更する(使用するプロセス数はplasma.inp内のnodes(:)の総積)
+#### 各シミュレーションフォルダ内のjobスクリプトの変更(下記ツールを用いる場合必要なし)
+```
+$ vim <simulation-folder>/job.sh
+使用するコア数等を適宜変更する(使用するプロセス数はplasma.inp内のnodes(:)の総積)
+```
+
+#### (便利ツール集のインストール)
+任意でページ下部にあるツール集をインストールする。
 
 ### 実行
 ```    
