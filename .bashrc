@@ -22,7 +22,7 @@ module switch intel/18.0.5.274 intel/19.1.2.254
 export PATH="~/.local/bin:$PATH"
 
 # alias for camptools #######
-alias js="job_status"
-alias je="job_status -e"
-alias jl="joblist"
+alias js="job_status"  # show all running job output (= qcat -o <job-id>)
+alias je="job_status -e"  # show all running job error output (= qcat -e <job-id>)
+alias jl="joblist"  # show all runnging job status (≒ qs; qgroup)
 alias chk="checkpoint"
