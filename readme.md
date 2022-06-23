@@ -125,10 +125,12 @@ module load anaconda3/2019.10
 EMSESのビルド及び各シミュレーションを実行しその結果の可視化を行う.
 
 ### 準備
-#### スパコン(camphor)の基本環境設定
+#### 1. スパコン(camphor)の基本環境設定
 スパコン(camphor)にログイン時に読み込まれる~/.bashrcという設定ファイルをcharging_simulation_set_by_emses/.bashrcで置き換える。
 
 ただしすでに~/.bashrcを修正している場合は、"# User specific aliases and functions"以下を既存の.bashrc下部に追記すること。
+
+また.bashrcを置き換えたあとはスパコンに再ログインすること。
 
 ```
 $ mv ~/.bashrc ~/.bashrc_old
@@ -136,7 +138,13 @@ $ cp <charging_simulation_set_by_emses>/.bashrc ~/.bashrc
 $ chmod 640 ~/.bashrc
 ```
 
-#### EMSESのビルド
+再ログイン後、EMSES出力ファイルを読み取るためのライブラリをインストールする。
+
+```
+$ pip install --user h5py
+```
+
+#### 2. EMSESのビルド
 
 ```
 $ cd mpiemses3d_ohhelp20
@@ -144,25 +152,25 @@ $ make clean
 $ make
 ```
 
-#### ビルドしたEMSESをシミュレーションフォルダーにコピー
+#### 3. ビルドしたEMSESをシミュレーションフォルダーにコピー
 
 ```
 $ cp mpiemses3d_ohhelp20/mpiemses3D <simulation-folder>/
 ```
 
-#### 各シミュレーションフォルダ内のjobスクリプトの権限変更(必要ない可能性あり)
+#### 4. 各シミュレーションフォルダ内のjobスクリプトの権限変更(必要ない可能性あり)
 
 ```
 $ chmod 740 <simulation-folder>/job.sh
 ```
 
-#### 各シミュレーションフォルダ内のjobスクリプトの変更(下記ツールを用いる場合必要なし)
+#### 5. 各シミュレーションフォルダ内のjobスクリプトの変更(下記ツール(camptools)を用いる場合必要なし)
 ```
 $ vim <simulation-folder>/job.sh
 使用するコア数等を適宜変更する(使用するプロセス数はplasma.inp内のnodes(:)の総積)
 ```
 
-#### (便利ツール集のインストール)
+#### 6. (便利ツール集のインストール)
 任意でページ下部にあるツール集をインストールする。
 
 ### 実行
@@ -171,7 +179,7 @@ $ cd <simulation-folder>
 $ qsub job.sh
 ```
 
-#### 下記ツールを用いる場合
+#### 下記ツール(camptools)を用いる場合
 ```
 $ myqsub job.sh -d <simulation-folder>
 myqsubコマンドは、シミュレーションフォルダー内のplasma.inpからnodes(:)を読み取りjob.shを書き換えたmyjob.shを作成し、myjob.shをジョブキューに投入する
