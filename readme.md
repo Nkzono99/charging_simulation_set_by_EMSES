@@ -128,7 +128,7 @@ EMSESのビルド及び各シミュレーションを実行しその結果の可
 #### スパコン(camphor)の基本環境設定
 スパコン(camphor)にログイン時に読み込まれる~/.bashrcという設定ファイルをcharging_simulation_set_by_emses/.bashrcで置き換える。
 
-ただし、すでに~/.bashrcを修正している場合は追記に留めること。
+ただしすでに~/.bashrcを修正している場合は、"# User specific aliases and functions"以下を既存の.bashrc下部に追記すること。
 
 ```
 $ mv ~/.bashrc ~/.bashrc_old
