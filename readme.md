@@ -125,6 +125,17 @@ module load anaconda3/2019.10
 EMSESのビルド及び各シミュレーションを実行しその結果の可視化を行う.
 
 ### 準備
+#### スパコン(camphor)の基本環境設定
+スパコン(camphor)にログイン時に読み込まれる~/.bashrcという設定ファイルをcharging_simulation_set_by_emses/.bashrcで置き換える。
+
+ただし、すでに~/.bashrcを修正している場合は追記に留めること。
+
+```
+$ mv ~/.bashrc ~/.bashrc_old
+$ cp <charging_simulation_set_by_emses>/.bashrc ~/.bashrc
+$ chmod 640 ~/.bashrc
+```
+
 #### EMSESのビルド
 
 ```
@@ -142,7 +153,7 @@ $ cp mpiemses3d_ohhelp20/mpiemses3D <simulation-folder>/
 #### 各シミュレーションフォルダ内のjobスクリプトの権限変更(必要ない可能性あり)
 
 ```
-$ chmod 755 <simulation-folder>/job.sh
+$ chmod 740 <simulation-folder>/job.sh
 ```
 
 #### 各シミュレーションフォルダ内のjobスクリプトの変更(下記ツールを用いる場合必要なし)
