@@ -150,6 +150,7 @@ $ pip install --user h5py
 $ cd mpiemses3d_ohhelp20
 $ make clean
 $ make
+$ chmod 500
 ```
 
 #### 3. ビルドしたEMSESをシミュレーションフォルダーにコピー
@@ -161,7 +162,7 @@ $ cp mpiemses3d_ohhelp20/mpiemses3D <simulation-folder>/
 #### 4. 各シミュレーションフォルダ内のjobスクリプトの権限変更(必要ない可能性あり)
 
 ```
-$ chmod 740 <simulation-folder>/job.sh
+$ chmod 700 <simulation-folder>/job.sh
 ```
 
 #### 5. 各シミュレーションフォルダ内のjobスクリプトの変更(下記ツール(camptools)を用いる場合必要なし)
