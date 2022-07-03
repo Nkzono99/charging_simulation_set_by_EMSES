@@ -3,9 +3,36 @@
 
 EMSES本体に関してはクラスルームから別途ダウンロードする必要あり
 
-
-
-
+- [帯電シミュレーション by EMSES](#帯電シミュレーション-by-emses)
+  - [内容](#内容)
+    - [plasma.inp](#plasmainp)
+    - [exp_surface](#exp_surface)
+      - [パラメータ:](#パラメータ)
+    - [exp_hole](#exp_hole)
+      - [パラメータ:](#パラメータ-1)
+    - [exp_surface_with_pe](#exp_surface_with_pe)
+      - [パラメータ:](#パラメータ-2)
+  - [その他必要なもの](#その他必要なもの)
+    - [emses3d_ohhelp20](#emses3d_ohhelp20)
+    - [Anaconda(python環境)のcamphorへのロード](#anacondapython環境のcamphorへのロード)
+  - [TODO](#todo)
+    - [準備](#準備)
+      - [1. スパコン(camphor)の基本環境設定](#1-スパコンcamphorの基本環境設定)
+      - [2. EMSESのビルド](#2-emsesのビルド)
+      - [3. ビルドしたEMSESをシミュレーションフォルダーにコピー](#3-ビルドしたemsesをシミュレーションフォルダーにコピー)
+      - [4. 各シミュレーションフォルダ内のjobスクリプトの権限変更(必要ない可能性あり)](#4-各シミュレーションフォルダ内のjobスクリプトの権限変更必要ない可能性あり)
+      - [5. 各シミュレーションフォルダ内のjobスクリプトの変更(下記ツール(camptools)を用いる場合必要なし)](#5-各シミュレーションフォルダ内のjobスクリプトの変更下記ツールcamptoolsを用いる場合必要なし)
+      - [6. (便利ツール集のインストール)](#6-便利ツール集のインストール)
+    - [実行](#実行)
+      - [下記ツール(camptools)を用いる場合](#下記ツールcamptoolsを用いる場合)
+    - [解析](#解析)
+    - [発展](#発展)
+  - [便利ツール集](#便利ツール集)
+    - [Camphor上でのコマンドツール: camptools ( https://github.com/Nkzono99/camptools )](#camphor上でのコマンドツール-camptools--httpsgithubcomnkzono99camptools-)
+    - [EMSESパラメータファイル生成ツール: emses_inp_generator ( https://github.com/Nkzono99/emses_inp_generator )](#emsesパラメータファイル生成ツール-emses_inp_generator--httpsgithubcomnkzono99emses_inp_generator-)
+    - [EMSESシミュレーション結果可視化ツール: emout ( https://github.com/Nkzono99/emout )](#emsesシミュレーション結果可視化ツール-emout--httpsgithubcomnkzono99emout-)
+- [その他](#その他)
+  - [EMSESシミュレーションを実行後、その結果を用いて追加stepのシミュレーションを行う](#emsesシミュレーションを実行後その結果を用いて追加stepのシミュレーションを行う)
 
 ## 内容
 ### plasma.inp
