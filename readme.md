@@ -33,6 +33,8 @@ EMSES本体に関してはクラスルームから別途ダウンロードする
     - [EMSESシミュレーション結果可視化ツール: emout ( https://github.com/Nkzono99/emout )](#emsesシミュレーション結果可視化ツール-emout--httpsgithubcomnkzono99emout-)
 - [その他](#その他)
   - [EMSESシミュレーションを実行後、その結果を用いて追加stepのシミュレーションを行う](#emsesシミュレーションを実行後その結果を用いて追加stepのシミュレーションを行う)
+  - [Particle-in-cell(PIC)法について](#particle-in-cellpic法について)
+  - [京大スーパーコンピューターシステムのマニュアル](#京大スーパーコンピューターシステムのマニュアル)
 
 ## 内容
 ### plasma.inp
@@ -309,3 +311,13 @@ $ "qsub job.sh" または "myqsub job.sh"
 ```
     $ extentsim <simulation-folder-old> <simulation-folder-new> -n <number-of-additional-step> --run
 ```
+
+## Particle-in-cell(PIC)法について
+松本紘,臼井英之,杉山徹,大村善治. n.d. “粒子シミュレーション法 概説.” http://www.astro.phys.s.chiba-u.ac.jp/netlab/summer-school/TEXTBOOK/text6.pdf.
+
+内藤裕志, and 佐竹真介. 2013. “粒子シミュレーションのコーディング技法.” プラズマ・核融合学会誌 = Journal of Plasma and Fusion Research 89 (4): 245–60.
+
+Lapenta, Giovanni. n.d. Particle In Cell Methods With Application to Simulations in Space Weather.
+
+## 京大スーパーコンピューターシステムのマニュアル
+https://web.kudpc.kyoto-u.ac.jp/manual/ja
