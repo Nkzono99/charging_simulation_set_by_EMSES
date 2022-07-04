@@ -115,6 +115,6 @@
 /
 
 &gradema
-    grad_coef = 2.0
+    grad_coef = 1.0
     smooth_coef = 1.0
 /
