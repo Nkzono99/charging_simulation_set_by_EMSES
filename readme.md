@@ -144,7 +144,7 @@ EMSES本体のソースコード
 $ <MPI_EXEC> ./mpiemses3D plasma.inp
 ※ <MPI_EXEC>: MPI実行コマンド (camphor上では"aprun -n <NUMBER_OF_PROCESS>")
 ```
-### Anaconda(python環境)のcamphorへのロード
+### Anaconda(python環境)のcamphorへのロード(準備 1.で実施)
 
 ```
 module load anaconda3/2019.10
