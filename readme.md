@@ -179,7 +179,7 @@ $ pip install --user h5py
 $ cd mpiemses3d_ohhelp20
 $ make clean
 $ make
-$ chmod 500
+$ chmod 500 mpiemses3D
 ```
 
 #### 3. ビルドしたEMSESをシミュレーションフォルダーにコピー
