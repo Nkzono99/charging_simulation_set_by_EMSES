@@ -69,6 +69,7 @@
 /
 
 &ptcond
+    boundary_type = "flat-surface"
     zssurf = 60.0
     npc = 0
     npcg = 0

@@ -76,6 +76,7 @@
     ccgs(1) = 0
     mtd_vchg(1) = 0
     modeww = -2
+    boundary_type = "rectangle-hole"
     xlrechole(1:2) = 11.0, 11.0
     xurechole(1:2) = 21.0, 21.0
     ylrechole(1:2) = 11.0, 11.0

@@ -70,6 +70,7 @@
 /
 
 &ptcond
+    boundary_type = "flat-surface"
     zssurf = 60.0
     npc = 0
     npcg = 0
@@ -83,21 +84,14 @@
 /
 
 &emissn
+    pe_ray_cast = .true.
     nflag_emit(1:3) = 0, 0, 2
-    nepl(3) = 1
     thetaz = 0.0
     thetaxy = 180.0
     imarea = 0.0, 0.0, 0.0
     plreloc = 0.0
     curf(3) = 829.3982816842599
-    dnsf(3) = 10
-    zmine(1) = 60.0
-    zmaxe(1) = 60.0
-    nemd(1) = 3
-    xmine(1) = 0
-    xmaxe(1) = 32
-    ymine(1) = 0
-    ymaxe(1) = 32
+    dnsf(3) = 30
 /
 
 &pclinj

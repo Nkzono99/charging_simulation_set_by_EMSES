@@ -1,18 +1,27 @@
 #!/bin/bash
-#============ PBS Options ============
-#QSUB -ug gr20001
-#QSUB -q gr20001a
-#QSUB -r n
-#QSUB -W 120:00
-#QSUB -A p=8:t=1:c=68:m=90G
+#SBATCH -p gr20001b
+#SBATCH --rsc p=128:t=1:c=1
+#SBATCH -t 72:00:00
+#SBATCH -o stdout.%J.log
+#SBATCH -e stderr.%J.log
 
-#============ Shell Script ============
-set -x
+# set -x
+
+module load fftw
+module load hdf5/1.12.2_intel-2022.3-impi
+
+export EMSES_DEBUG=no
 
 date
-export EMSES_DEBUG=no
-aprun -n $(($QSUB_PROCS*64)) -d $QSUB_THREADS -N 64 ./mpiemses3D plasma.inp
+
+srun ./mpiemses3D plasma.inp
+
+date
+
+# Postprocessing(visualization code, etc.)
+
 echo ...done
+
 python generate_xdmf3.py nd*.h5 rhobk00_0000.h5
 python generate_xdmf3.py rho00_0000.h5
 python generate_xdmf3.py phisp00_0000.h5
