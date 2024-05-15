@@ -1,11 +1,12 @@
 #!/bin/bash
-#SBATCH -p gr20001b
-#SBATCH --rsc p=128:t=1:c=1
-#SBATCH -t 72:00:00
+#SBATCH -p gr20001a
+#SBATCH --rsc p=32:t=1:c=1
+#SBATCH -t 168:00:00
 #SBATCH -o stdout.%J.log
 #SBATCH -e stderr.%J.log
 
-# set -x
+set -x
+export LD_LIBRARY_PATH="/LARGE0/gr20001/KUspace-share/common/hdf5-lib/hdf5-1.14.3-240410/lib:/LARGE0/gr20001/KUspace-share/common/fftw-lib/fftw-3.3.10-240410/lib:$LD_LIBRARY_PATH"
 
 module load fftw
 module load hdf5/1.12.2_intel-2022.3-impi
@@ -14,6 +15,7 @@ export EMSES_DEBUG=no
 
 date
 
+rm *_0000.h5
 srun ./mpiemses3D plasma.inp
 
 date
